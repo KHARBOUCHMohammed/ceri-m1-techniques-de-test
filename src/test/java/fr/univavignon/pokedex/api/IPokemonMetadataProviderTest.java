@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public interface IPokemonMetadataProviderTest {
+public class IPokemonMetadataProviderTest {
 
     @Test
-    public default void AffichageTest() throws PokedexException {
+    public  void AffichageTest() throws PokedexException {
         IPokemonMetadataProvider pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
 
 

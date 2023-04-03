@@ -13,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyString;
 
 
-public interface IPokemonTrainerFactoryTest {
+public class IPokemonTrainerFactoryTest {
 
 
     IPokemonTrainerFactory pokemonTrainerFactory = mock(IPokemonTrainerFactory.class);
@@ -22,7 +22,7 @@ public interface IPokemonTrainerFactoryTest {
     Pokemon pokemon1 =new Pokemon(133, "Aquali", 186, 168, 260, 0, 0, 0, 0, 0);
 
     @Before
-    public default void init() {
+    public  void init() {
 
         when(pokemonTrainerFactory.createTrainer(
                 anyString(), any(), any()
@@ -41,7 +41,7 @@ public interface IPokemonTrainerFactoryTest {
 
 
     @Test
-    public default void creationPokemonTrainerTest() throws PokedexException {
+    public  void creationPokemonTrainerTest() throws PokedexException {
 
         PokemonTrainer pokemonTrainer = pokemonTrainerFactory.createTrainer("Mohammed", Team.VALOR, pokedexFactory);
         pokemonTrainer.getPokedex().addPokemon(pokemon1);

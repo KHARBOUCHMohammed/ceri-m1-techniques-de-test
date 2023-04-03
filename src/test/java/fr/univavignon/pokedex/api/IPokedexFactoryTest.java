@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-public interface IPokedexFactoryTest {
+public class IPokedexFactoryTest {
 
     IPokedexFactory pokedexFactory = mock(IPokedexFactory.class);
     IPokemonMetadataProvider metadataProvider =  mock(IPokemonMetadataProvider.class);
@@ -18,7 +18,7 @@ public interface IPokedexFactoryTest {
 
 
 
-    public default void creationPokedex() {
+    public  void creationPokedex() {
         when(pokedexFactory.createPokedex(any(), any())).thenAnswer(new Answer<IPokedex>() {
             public IPokedex answer(InvocationOnMock invocation) {
                 IPokedex pokedex = mock(IPokedex.class);

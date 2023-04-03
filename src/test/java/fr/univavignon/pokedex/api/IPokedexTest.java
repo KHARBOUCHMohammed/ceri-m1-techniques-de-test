@@ -15,20 +15,20 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface IPokedexTest {
+public class IPokedexTest {
 
     IPokedex pokedex = Mockito.mock(IPokedex.class);
     List<Pokemon> listePokemon = new ArrayList<Pokemon>();
 
     @Before
-    public default void init() {
+    public  void init() {
         Pokemon pokemon1 =new Pokemon(133, "Aquali", 186, 168, 260, 0, 0, 0, 0, 0);
         listePokemon.add(pokemon1);
 
     }
 
 
-    public default void getSize() {
+    public  void getSize() {
         when(pokedex.size()).thenAnswer(new Answer<Integer>(){
 
             @Override
@@ -42,7 +42,7 @@ public interface IPokedexTest {
     }
 
     @Test
-    public default void addPokemon() { //ce test ne marche pas
+    public  void addPokemon() { //ce test ne marche pas
         when(pokedex.addPokemon(any())).thenAnswer(new Answer<Integer>() {
 
             @Override
@@ -64,7 +64,7 @@ public interface IPokedexTest {
     }
 
     @Test
-    public default void getPokemon() {
+    public  void getPokemon() {
         try {
             when(pokedex.getPokemon(anyInt())).thenAnswer(new Answer<Pokemon>() {
                 @Override
@@ -91,14 +91,14 @@ public interface IPokedexTest {
     }
 
     @Test
-    public default void getPokemons() {
+    public  void getPokemons() {
         when(pokedex.getPokemons()).thenReturn(listePokemon);
         List<Pokemon> pokemons = pokedex.getPokemons();
         assertEquals(pokemons.size(), 1);
     }
 
     @Test
-    public default void getPokemons2() {
+    public  void getPokemons2() {
         when(pokedex.getPokemons(any())).thenAnswer(new Answer<List<Pokemon>>() {
 
             @SuppressWarnings("unchecked")

@@ -10,14 +10,14 @@ import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-public interface IPokemonFactoryTest {
+public class IPokemonFactoryTest {
 
     static final Pokemon Pokemon = null;
 
     IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
 
     @Before
-    public default void init() {
+    public  void init() {
         when(pokemonFactory.createPokemon(anyInt(), anyInt(), anyInt(), anyInt(), anyInt())).thenAnswer(new Answer<Pokemon>() {
             public Pokemon answer(InvocationOnMock invocation) {
                 Object[] args = invocation.getArguments();
@@ -32,9 +32,8 @@ public interface IPokemonFactoryTest {
     }
 
     @Test
-    public default void creationPokemonTest() {
-        Pokemon pokemon = pokemonFactory.createPokemon(2729, 202, 5000, 4, 133); //pour une raison qui m'échappe, l'id du pokemon doit être placé à la fin
-        //pokemonFactory.createPokemon(0, 1, 2, 3, 4);
+    public  void creationPokemonTest() {
+        Pokemon pokemon = pokemonFactory.createPokemon(2729, 202, 5000, 4, 133);
         assertEquals(133, pokemon.getIndex());
         assertEquals("Aquali", pokemon.getName());
         assertEquals(126, pokemon.getAttack());
