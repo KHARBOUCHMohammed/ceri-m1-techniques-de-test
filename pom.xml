@@ -51,8 +51,8 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.9</version>
-        <executions>
+        <version xmlns="http://maven.apache.org/POM/4.0.0">0.8.9</version>
+        <executions xmlns="http://maven.apache.org/POM/4.0.0" >
           <execution>
             <id>prepare-integration-tests</id>
             <phase>pre-integration-test</phase>
