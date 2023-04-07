@@ -1,4 +1,4 @@
-name: API workflow
+name: codeCov workflow
 
 on: [push, pull_request]
 
@@ -9,7 +9,7 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-          token: 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
+          token: 4ce7896f-044f-4211-93ff-680e9e2e790c
   run:
     runs-on: ubuntu-latest
     steps:
@@ -26,4 +26,4 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          token: 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
+          token: 4ce7896f-044f-4211-93ff-680e9e2e790c
