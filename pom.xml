@@ -81,34 +81,21 @@
         </executions>
       </plugin>
 
-
-
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.1.2</version>
         <executions>
           <execution>
-            <id>id.chechstyle</id>
             <phase>process-classes</phase>
             <goals>
               <goal>checkstyle</goal>
             </goals>
-            <configuration>
-              <configuration>
-                <configLocation>checkstyle.xml</configLocation>
-                <encoding>UTF-8</encoding>
-                <consoleOutput>true</consoleOutput>
-
-                <linkXRef>false</linkXRef>
-                <outputDirectory>target/site</outputDirectory>
-              </configuration>
-
-            </configuration>
           </execution>
         </executions>
       </plugin>
+
+
       <plugin>
         <groupId>com.github.bordertech.buildtools</groupId>
         <artifactId>badger</artifactId>
@@ -120,28 +107,33 @@
               <goal>badges</goal>
             </goals>
             <configuration>
-              <outputDir>target/site/badges</outputDir>
+              <outputDir>target/site/badges/</outputDir>
               <inputFiles>
                 <inputFile>target/checkstyle-result.xml</inputFile>
               </inputFiles>
-
             </configuration>
           </execution>
         </executions>
       </plugin>
 
-
-
-
-
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration>
+          <source>8</source>
+          <detectJavaApiLink>false</detectJavaApiLink>
+          <show>private</show>
+          <nohelp>true</nohelp>
+        </configuration>
+      </plugin>
 
 
     </plugins>
 
   </build>
 
-
-<reporting>
+  <reporting>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -157,5 +149,8 @@
       </plugin>
     </plugins>
   </reporting>
+
+
+
 
 </project>
