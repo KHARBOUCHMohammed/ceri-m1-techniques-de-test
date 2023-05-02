@@ -17,7 +17,7 @@
 
 * [![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://kharbouchmohammed.github.io/ceri-m1-techniques-de-test/)
 
-#Checkstyle
+# Checkstyle
 
 * ![Checkstyle](target/site/badges/checkstyle-result.svg)
 
