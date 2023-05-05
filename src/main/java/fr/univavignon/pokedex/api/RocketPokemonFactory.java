@@ -35,24 +35,27 @@ public class RocketPokemonFactory implements IPokemonFactory {
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
         String name;
+        if(!index2name.containsKey(index)) {
+            name = index2name.get(0);
+        } else {
+            name = index2name.get(index);
+        }
         int attack;
         int defense;
         int stamina;
         double iv;
-        try {
-            if(index < 0 || index > 150){
-                throw new PokedexException("Index Invalid");
-            }else if(!index2name.containsKey(index)){
-                throw new PokedexException("Ce pokemon n'existe pas");
-            }
-            name = index2name.get(index);
+        if(index < 0) {
+            attack = 1000;
+            defense = 1000;
+            stamina = 1000;
+            iv = 0;
+        } else {
             attack = RocketPokemonFactory.generateRandomStat();
             defense = RocketPokemonFactory.generateRandomStat();
             stamina = RocketPokemonFactory.generateRandomStat();
             iv = 1;
-        } catch (PokedexException e) {
-            throw new RuntimeException(e.getMessage());
         }
         return new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv);
     }
+
 }
