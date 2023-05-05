@@ -2,7 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
 
-//import fr.univavignon.pokedex.api.RocketPokemonFactory;
+import fr.univavignon.pokedex.api.RocketPokemonFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
