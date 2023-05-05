@@ -1,0 +1,4 @@
+En ajoutant RocketPokemonFactory.java, checkstyle trouve 24 erreurs.
+RocketPokemonFactory.java ne passe pas les tests.
+Les IV sont mal gérés.
+Des pokémons sont créés même quand l'id est supérieur à 150 ou inférieure à 0
