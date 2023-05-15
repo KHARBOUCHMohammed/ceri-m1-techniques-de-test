@@ -1,4 +1,16 @@
-En ajoutant RocketPokemonFactory.java, checkstyle trouve 24 erreurs.
-RocketPokemonFactory.java ne passe pas les tests.
-Les IV sont mal gérés.
-Des pokémons sont créés même quand l'id est supérieur à 150 ou inférieure à 0
+# Rapport
+Une nouvelle classe, RocketPokemonFactoryTest, a été développée dans le but de tester les méthodes d'implémentation de la classe RocketPokemonFactory.
+Une méthode spécifique, rocketCreatePokemonTest(), a été créée pour tester la fonctionnalité en question.
+Il convient de noter plusieurs points après l'exécution de cette méthode de test.
+
+Il convient de noter plusieurs problèmes lors des tests de la classe RocketPokemonFactory.java ne passe pas les tests.
+
+Premièrement, il y a une erreur observable lors du test de la méthode "getIv()". Lorsque nous fournissons un IV (Individual Value) en tant que paramètre pour un Pokémon, celui-ci n'est pas pris en compte lors de la création.
+Cela est dû à une implémentation fixe qui attribue toujours la valeur "1" à l'IV, sans tenir compte de la valeur fournie en paramètre.
+
+Deuxièmement, l'exception n'est pas correctement gérée dans l'implémentation de la Team Rocket. Normalement, un Pokémon ne peut pas avoir un indice inférieur à 0 ou supérieur à 150.
+Cependant, avec la méthode createPokemon de cette nouvelle implémentation, aucune exception n'est lancée lorsque nous fournissons un indice inférieur à 0 ou supérieur à 150.
+
+Enfin, il est également important de souligner que l'implémentation fournie par la Team Rocket présente des erreurs de conformité aux règles de style (checkstyle).
+
+En résumé, la classe RocketPokemonFactory ne réussit pas les tests en raison de ces problèmes.
